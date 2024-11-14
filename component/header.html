@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="../style/header.css">
+</head>
+<body>
+    <header>
+        <div class="start">
+            <div class="start-list">
+                <img src="../asset/icon/hamburger.svg" alt="목록">
+            </div>
+            <div class="logo">
+                <img src="../asset/logo/logo.svg" alt="아이콘">
+            </div>
+        </div>
+        <div class="center">
+            <div class="search-input">
+                <input type="text" placeholder="검색" id="seach-input">
+                <img src="//www.gstatic.com/inputtools/images/tia.png" alt="키보드 입력">
+            </div>
+            <button id="seach-button">
+                <img src="../asset/icon/saerch.svg" alt="검색 버튼">
+            </button>
+            <div class="mike">
+                <img src="../asset/icon/mike.svg" alt="음성 입력">
+            </div>
+        </div>
+        <div class="end">
+            <div class="kabap">
+                <img src="../asset/icon/Kebap.svg" alt="">
+            </div>
+            <div class="user">
+                <img src="../asset/icon/user.svg" alt="">
+                <p>로그인</p>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.getElementById('seach-button').addEventListener('click', function() {
+            const inputValue = document.getElementById('seach-input').value;
+            const targetUrl = `../view/result.html?input=${encodeURIComponent(inputValue)}`;
+            window.parent.location.href = targetUrl;
+        });
+    </script>
+</body>
+</html>
