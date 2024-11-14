@@ -18,6 +18,7 @@ export class Parser {
                 title: item.snippet.title,
                 thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.medium?.url, // 높은 해상도 사용
                 channelTitle: item.snippet.channelTitle,
+                videoId: item.id.videoId, 
             }));
 
             return results;

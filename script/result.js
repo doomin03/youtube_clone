@@ -21,16 +21,10 @@ async function displayResults() {
             const resultItem = document.createElement('div');
             resultItem.className = 'result-item';
         
-            const highRes = item.thumbnail;
-            const mediumRes = item.thumbnail.replace('hqdefault', 'mqdefault'); // Replace high-quality with medium-quality if needed
-        
             resultItem.innerHTML = `
-                <img 
-                    src="${highRes}" 
-                    alt="${item.title}" 
-                    class="thumbnail" 
-                    srcset="${mediumRes} 1x, ${highRes} 2x"
-                >
+                <a href="https://www.youtube.com/watch?v=${item.videoId}" target="_blank">
+                    <img src="${item.thumbnail}" alt="${item.title}" class="thumbnail">
+                </a>
                 <div class="info">
                     <p class="title">${item.title}</p>
                     <p class="channel">${item.channelTitle}</p>
@@ -39,6 +33,7 @@ async function displayResults() {
         
             container.appendChild(resultItem);
         });
+        
     } catch (error) {
         console.error('오류 발생:', error);
         document.getElementById('results-container').innerHTML = '<p>데이터를 불러오는 중 오류가 발생했습니다.</p>';
